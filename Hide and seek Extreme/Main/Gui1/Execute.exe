@@ -1,0 +1,174 @@
+
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local PhantomForcesWindow = Library:NewWindow("Hide And Seek v1")
+
+local KillingCheats = PhantomForcesWindow:NewSection("Main")
+
+KillingCheats:CreateToggle("Auto Kill", function(value)
+getgenv().F = value
+if getgenv().F == true then
+while getgenv().F == true do
+wait()
+local It = game.ReplicatedStorage.GameData.It.Value
+
+if It == game.Players.LocalPlayer.Name then
+local function getRandomPlayer()
+    local players = game.Players:GetPlayers()
+    return players[math.random(1, #players)]
+end
+local Randomplr = getRandomPlayer()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Randomplr.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,2)
+
+else
+local function mostrarNotificacion(jugador, mensaje)
+    local notificacion = Instance.new("Hint", jugador.PlayerGui)
+    notificacion.Text = mensaje
+    
+    wait(2)
+    notificacion:Destroy()
+end
+
+local Seeker = game.ReplicatedStorage.GameData.It.Value
+local jugador = game.Players.LocalPlayer
+local mensaje = "You need Become Seeker to use this!, the Player "..Seeker.." is the server Seeker/It"
+
+mostrarNotificacion(jugador, mensaje)
+end
+end
+end
+end)
+
+KillingCheats:CreateTextbox("Walk Speed", function(text)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = text
+end)
+
+KillingCheats:CreateToggle("Auto Move", function(value)
+getgenv().K = value
+if getgenv().K == true then
+while getgenv().K == true do
+wait()
+local Trapper = game.ReplicatedStorage.GameData.It.Value
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Trapper].Character.HumanoidRootPart.CFrame * CFrame.new(-29, 21, 25)
+function void()
+local bloque = Instance.new("Part")
+bloque.Size = Vector3.new(5, 1, 5)
+bloque.Anchored = true
+bloque.Transparency = 1
+bloque.Name = "p"
+bloque.CanCollide = true
+bloque.Position = game.Players.LocalPlayer.Character.PrimaryPart.Position + Vector3.new(0, -4, 0)
+wait()
+bloque.Position = game.Players.LocalPlayer.Character.PrimaryPart.Position + Vector3.new(0, -3, 0)
+bloque.Parent = game.Workspace
+wait()
+bloque:Destroy()
+end
+
+
+void()
+end
+end
+end)
+
+KillingCheats:CreateButton("ESP", function(text)
+local plrs = game.Players:GetPlayers()
+for i,v in pairs(plrs) do
+    for _, child in pairs(v.Character:GetChildren()) do
+        if child:IsA("Highlight") then
+            child:Destroy()
+        end
+    end
+local plrs = game.Players:GetPlayers()
+
+for i,v in pairs(plrs) do
+local ESP = Instance.new("Highlight")
+
+ESP.OutlineTransparency = 0.6
+ESP.FillTransparency = 0.6
+ESP.OutlineColor = Color3.fromRGB(25, 999, 45)
+ESP.FillColor = Color3.fromRGB(45, 67, 888)
+ESP.Name = "ESP"
+ESP.Parent = v.Character
+wait(0.1)
+local ESP = Instance.new("Highlight")
+local Trapper = game.ReplicatedStorage.GameData.It.Value
+ESP.OutlineTransparency = 0.6
+ESP.FillTransparency = 0.6
+ESP.OutlineColor = Color3.fromRGB(255, 0, 0)
+ESP.FillColor = Color3.fromRGB(225, 0, 0)
+ESP.Name = "ESP"
+ESP.Parent = game.Players[Trapper].Character
+
+end
+end
+end)
+
+KillingCheats:CreateButton("ESP It", function(text)
+local plrs = game.Players:GetPlayers()
+for i,v in pairs(plrs) do
+    for _, child in pairs(v.Character:GetChildren()) do
+        if child:IsA("Highlight") then
+            child:Destroy()
+        end
+   end
+ 
+
+wait()
+local ESP = Instance.new("Highlight")
+local Trapper = game.ReplicatedStorage.GameData.It.Value
+ESP.OutlineTransparency = 0.6
+ESP.FillTransparency = 0.6
+ESP.OutlineColor = Color3.fromRGB(255, 0, 0)
+ESP.FillColor = Color3.fromRGB(225, 0, 0)
+ESP.Name = "ESP"
+ESP.Parent = game.Players[Trapper].Character
+end
+end)
+
+KillingCheats:CreateToggle("Collect Coins", function(value)
+getgenv().eK = value
+
+if getgenv().eK == true then
+while getgenv().eK == true do
+wait()
+local Coin = game.Workspace.GameObjects
+local Frame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+
+wait(0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Coin.Credit.CFrame
+wait(0.1)
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,game:GetService("Workspace").GameObjects.Credit, 0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Frame
+
+local function mostrarNotificacion(jugador, mensaje)
+    local notificacion = Instance.new("Hint", jugador.PlayerGui)
+    notificacion.Text = mensaje
+    
+    wait(2)
+    notificacion:Destroy()
+end
+
+local Seeker = game.ReplicatedStorage.GameData.It.Value
+local jugador = game.Players.LocalPlayer
+local mensaje = "Just wait"
+
+mostrarNotificacion(jugador, mensaje)
+end
+end
+end)
+
+KillingCheats:CreateButton("Hide Place", function(value)
+getgenv().Hide = true
+
+if getgenv().Hide == true then
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-90.7864227, 668.997437, 105.488525, 0.114984788, 0.13639836, 0.983958304, -2.93519054e-09, 0.990528226, -0.137309089, -0.993367255, 0.0157884546, 0.113895684)
+end
+end)
+
+local KillingCheats = PhantomForcesWindow:NewSection("It: "..game.ReplicatedStorage.GameData.It.Value)
+
+local KillingCheats = PhantomForcesWindow:NewSection("YT: @masket_smile6013")
